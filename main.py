@@ -830,7 +830,7 @@ async def upload(bot: Client, m: Message):
         await m.reply_text(e)
         await log_to_channel(bot, f"#ERROR\nError in /gaurav command\nError: {str(e)}\nBy: {m.from_user.id}")
     
-    await m.reply_text(f"`📌𝗕𝗔𝗧𝗖𝗛 𝗡𝗔𝗠𝗘 : {len(links)}\n"
+    await m.reply_text(f"`📌𝗕𝗔𝗧𝗖𝗛 𝗡𝗔𝗠𝗘 : {b_name}\n\n"
                        f"▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n"
                        f"🗃️𝗧𝗢𝗧𝗔𝗟 𝗠𝗔𝗧𝗘𝗥𝗜𝗔𝗟🗃️ : {len(links)}\n"
                        f"▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n"

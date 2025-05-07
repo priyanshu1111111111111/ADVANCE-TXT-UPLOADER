@@ -830,12 +830,17 @@ async def upload(bot: Client, m: Message):
         await m.reply_text(e)
         await log_to_channel(bot, f"#ERROR\nError in /gaurav command\nError: {str(e)}\nBy: {m.from_user.id}")
     
-    await m.reply_text(f"`📌𝗕𝗔𝗧𝗖𝗛 𝗡𝗔𝗠𝗘 : {len(links)\n\n"
-                       f"▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n"
-                       f"𝗟𝗘𝗔𝗥𝗡𝗜𝗡𝗚 𝗠𝗔𝗧𝗘𝗥𝗜𝗔𝗟 : {len(links)}\n"
-                       f"▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n"
-                       f"🎬𝗩𝗶𝗱𝗲𝗼 » {video_count}\n📁𝗣𝗱𝗳 » {pdf_count}\n🖼𝗜𝗺𝗴 » {img_count}\n🧰𝗭𝗶𝗽 » {zip_count}\n🥱𝗙𝗮𝗶𝗹𝗲𝗱 𝗨𝗿𝗹 » {failed_count}\n\n"
-                       f"▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n")
+    await m.reply_text f"`📌𝗕𝗔𝗧𝗖𝗛 𝗡𝗔𝗠𝗘 : {b_name}`\n\n"
+        f"▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n"
+        f"𝗟𝗘𝗔𝗥𝗡𝗜𝗡𝗚 𝗠𝗔𝗧𝗘𝗥𝗜𝗔𝗟 : {len(links)}\n"
+        f"▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n"
+        f"🎬𝗩𝗶𝗱𝗲𝗼 » {video_count}\n"
+        f"📁𝗣𝗱𝗳 » {pdf_count}\n"
+        f"🖼𝗜𝗺𝗴 » {img_count}\n"
+        f"🧰𝗭𝗶𝗽 » {zip_count}\n"
+        f"🥱𝗙𝗮𝗶𝗹𝗲𝗱 𝗨𝗿𝗹 » {failed_count}\n\n"
+        f"▬▬▬▬▬▬▬▬▬▬▬▬▬▬"
+    )
     await m.reply_text(f"<pre><code>📥𝗘𝘅𝘁𝗿𝗮𝗰𝘁𝗲𝗱 𝗕𝘆 ➤『{CR}』</code></pre>")
     await m.reply_text(f"<pre><code>『😏𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗞𝗼𝗻 𝗗𝗲𝗴𝗮😏』</code></pre>")
     await log_to_channel(bot, f"#BATCH_COMPLETED\nUser: {m.from_user.id}\nBatch: {b_name}\nTotal: {len(links)}\nFailed: {failed_count}")

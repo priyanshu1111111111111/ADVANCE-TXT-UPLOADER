@@ -826,11 +826,12 @@ async def upload(bot: Client, m: Message):
                 failed_count += 1
                 continue   
 
-    except Exception as e:
-        await m.reply_text(e)
+        except Exception as e:
+        await m.reply_text(str(e))
         await log_to_channel(bot, f"#ERROR\nError in /gaurav command\nError: {str(e)}\nBy: {m.from_user.id}")
-    
-   await m.reply_text f"`📌𝗕𝗔𝗧𝗖𝗛 𝗡𝗔𝗠𝗘 : {b_name}`\n\n"
+
+    await m.reply_text(
+        f"`📌𝗕𝗔𝗧𝗖𝗛 𝗡𝗔𝗠𝗘 : {b_name}`\n\n"
         f"▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n"
         f"𝗟𝗘𝗔𝗥𝗡𝗜𝗡𝗚 𝗠𝗔𝗧𝗘𝗥𝗜𝗔𝗟 : {len(links)}\n"
         f"▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n"
@@ -841,10 +842,12 @@ async def upload(bot: Client, m: Message):
         f"🥱𝗙𝗮𝗶𝗹𝗲𝗱 𝗨𝗿𝗹 » {failed_count}\n\n"
         f"▬▬▬▬▬▬▬▬▬▬▬▬▬▬"
     )
-    await m.reply_text(f"<pre><code>📥𝗘𝘅𝘁𝗿𝗮𝗰𝘁𝗲𝗱 𝗕𝘆 ➤『{CR}』</code></pre>")
-    await m.reply_text(f"<pre><code>『😏𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗞𝗼𝗻 𝗗𝗲𝗴𝗮😏』</code></pre>")
-    await log_to_channel(bot, f"#BATCH_COMPLETED\nUser: {m.from_user.id}\nBatch: {b_name}\nTotal: {len(links)}\nFailed: {failed_count}")
 
-bot.run()
-if __name__ == "__main__":
-    asyncio.run(main())
+    await m.reply_text(f"<pre><code>📥𝗘𝘅𝘁𝗿𝗮𝗰𝘁𝗲𝗱 𝗕𝘆 ➤『{CR}』</code></pre>")
+    await m.reply_text("<pre><code>『😏𝗥𝗲𝗮𝗰𝘁𝗶𝗼𝗻 𝗞𝗼𝗻 𝗗𝗲𝗴𝗮😏』</code></pre>")
+    
+    await log_to_channel(
+        bot,
+        f"#BATCH_COMPLETED\nUser: {m.from_user.id}\nBatch: {b_name}\nTotal: {len(links)}\nFailed: {failed_count}"
+    )
+

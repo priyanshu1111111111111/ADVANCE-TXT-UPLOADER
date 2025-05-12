@@ -568,9 +568,9 @@ async def upload(bot: Client, m: Message):
     input3: Message = await bot.listen(editable.chat.id)
     raw_text3 = input3.text
     await input3.delete(True)
-    credit = "️[Gaurav](https://t.me/ytbr_67)"
+    credit = "️[Gaurav](https://t.me/Candlestickreactionpaidcourse)"
     if raw_text3 == '1':
-        CR = '[Gaurav](https://t.me/ytbr_67)'
+        CR = '[Gaurav](https://t.me/Candlestickreactionpaidcourse)'
     elif raw_text3:
         try:
             text, link = raw_text3.split(',')
